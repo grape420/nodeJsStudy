@@ -3,12 +3,10 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.render("home/index");       // views에서 ./views로 설정해두었기 때문에 바로 home부터 시작
-});
+const ctrl = require("./home.ctrl");
 
-router.get("/login", (req, res) => {
-  res.render("home/login");
-});
+router.get("/", ctrl.hello);
+
+router.get("/login", ctrl.login);
 
 module.exports = router;      // 외부에서 이 라우터를 사용할 수 있게 export
