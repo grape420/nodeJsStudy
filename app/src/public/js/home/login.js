@@ -18,6 +18,9 @@ function login() {
       "Content-Type" : "application/JSON"
     },
     body : JSON.stringify(req)
-  });
+  })
+    .then((res) => res.json())
+    // .then((res) => console.log(res));  아래 코드처럼 생략 가능
+    .then(console.log);
 
 }
