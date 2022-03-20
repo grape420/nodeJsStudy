@@ -19,7 +19,7 @@ const users = {
 const process = {
   login : (req, res) => {
     const id = req.body.id,
-      pwd = req.body.pwd;
+          pwd = req.body.pwd;
 
       if (users.id.includes(id)) {
         const idx = users.id.indexOf(id);

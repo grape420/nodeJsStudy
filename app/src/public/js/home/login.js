@@ -21,6 +21,16 @@ function login() {
   })
     .then((res) => res.json())
     // .then((res) => console.log(res));  아래 코드처럼 생략 가능
-    .then(console.log);
+    // .then(console.log);
+    .then((res) => {
+      if (res.success) {
+        location.href = '/';
+      } else {
+        alert(res.msg);
+      }
+    })
+    .catch((err) => {
+      console.error("로그인 중 에러 발생");
+    })
 
 }
